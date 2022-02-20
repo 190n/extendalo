@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  extendalo:
+    # build with this directory's Dockerfile
+    build: .
+    # this specifies the tag
+    image: extendalo:latest
+
+    volumes:
+      - ./extendalo-persist:/app/extendalo-persist
+    env_file:
+      - .env
