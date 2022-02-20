@@ -1,6 +1,7 @@
 version: "3.3"
 services:
   extendalo:
+    restart: unless-stopped
     # build with this directory's Dockerfile
     build: .
     # this specifies the tag
