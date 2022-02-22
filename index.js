@@ -25,7 +25,8 @@ async function update() {
 
 	if (final != lastContent) {
 		console.log('change detected');
-		const message = `a change was detected <:monke:912986988020383774>
+		const message = `<@&912976235632676875>
+a change was detected <:monke:912986988020383774>
 before:
 \`\`\`
 ${lastContent == '' ? ' ' : lastContent}
