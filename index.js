@@ -20,8 +20,8 @@ async function update() {
 	const lines = $('a[href=pa7.pdf]').parent().text().split('\n'),
 		pa7Index = lines.findIndex(l => l.includes('pa6')),
 		endIndex = lines.findIndex((l, i) => i > pa7Index && l.includes('pa7')),
-		relevantLines = lines.slice(pa7Index, endIndex).filter(l => !l.match(/^\W*$/)),
-		final = relevantLines.map(l => l.replaceAll(/^\W+|\W+$/g, '')).join('\n');
+		relevantLines = lines.slice(pa7Index, endIndex).filter(l => !l.match(/^\s*$/)),
+		final = relevantLines.map(l => l.replaceAll(/^\s+|\s+$/g, '')).join('\n');
 
 	if (final != lastContent) {
 		console.log('change detected');
