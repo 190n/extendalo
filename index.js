@@ -17,15 +17,15 @@ async function update() {
 	const html = await (await fetch(watchURL)).text(),
 		$ = cheerio.load(html);
 
-	const lines = $('a[href=pa7.pdf]').parent().text().split('\n'),
-		pa7Index = lines.findIndex(l => l.includes('pa7')),
-		endIndex = lines.findIndex((l, i) => i > pa7Index && l.includes('pa8')),
+	const lines = $('a[href=pa8.pdf]').parent().text().split('\n'),
+		pa7Index = lines.findIndex(l => l.includes('pa8')),
+		endIndex = lines.length,
 		relevantLines = lines.slice(pa7Index, endIndex).filter(l => !l.match(/^\s*$/)),
 		final = relevantLines.map(l => l.replaceAll(/^\s+|\s+$/g, '')).join('\n');
 
 	if (final != lastContent) {
 		console.log('change detected');
-		const message = `<@&912976235632676875>
+		const message = `<@&912976235632676875raf>
 a change was detected <:monke:912986988020383774>
 before:
 \`\`\`
